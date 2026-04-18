@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { HiCode, HiLightningBolt, HiHeart } from 'react-icons/hi';
+import { HiCode, HiLightningBolt, HiHeart, HiDownload } from 'react-icons/hi';
 import './About.css';
 
 const highlights = [
@@ -62,6 +62,11 @@ export default function About() {
               to open-source projects, or mentoring aspiring developers. I'm always eager to 
               take on new challenges and collaborate on meaningful projects.
             </p>
+
+            <a href="/Deborah_Nanyanzi_CV.pdf" download className="about__cv-btn">
+              <HiDownload size={20} />
+              Download CV
+            </a>
 
             <div className="about__stats">
               <div className="about__stat">

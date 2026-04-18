@@ -17,8 +17,21 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    const form = e.target;
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form)).toString(),
+    })
+      .then(() => {
+        alert('Thank you for your message! I\'ll get back to you soon.');
+        setFormData({ name: '', email: '', message: '' });
+      })
+      .catch((error) => {
+        alert('Something went wrong. Please try again or contact me directly via email.');
+        console.error('Form submission error:', error);
+      });
   };
 
   const handleChange = (e) => {
@@ -82,7 +95,11 @@ export default function Contact() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
+            name="contact"
+            method="POST"
+            data-netlify="true"
           >
+            <input type="hidden" name="form-name" value="contact" />
             <div className="contact__field">
               <label htmlFor="contact-name" className="contact__label">Your Name</label>
               <input

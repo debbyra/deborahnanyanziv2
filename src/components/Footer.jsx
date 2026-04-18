@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedinIn, FaTwitter, FaHeart } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import './Footer.css';
 
 export default function Footer() {
@@ -31,8 +31,7 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <p>
-            © {new Date().getFullYear()} Deborah Nanyanzi. Built with{' '}
-            <FaHeart className="footer__heart" size={12} /> All rights reserved.
+            © {new Date().getFullYear()} Deborah Nanyanzi. All rights reserved.
           </p>
         </div>
       </div>
