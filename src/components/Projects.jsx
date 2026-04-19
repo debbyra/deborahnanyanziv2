@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import { HiExternalLink } from 'react-icons/hi';
 import { FaGithub } from 'react-icons/fa';
 import './Projects.css';
+import tascLmsPreview from '../assets/tasc-lms-preview.png';
 
 const projects = [
   {
@@ -13,7 +14,7 @@ const projects = [
     color: '#ec4899',
     github: '#',
     live: '#',
-    image: 'https://placehold.co/600x400/1a1a1a/ec4899?text=TASC+LMS+Preview',
+    image: tascLmsPreview,
   },
   {
     title: 'Personal Portfolio',
